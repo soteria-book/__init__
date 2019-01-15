@@ -3,8 +3,11 @@
 start=$( cd `dirname $0` && pwd	 )
 
 http https://raw.githubusercontent.com/soteria-book/publication/master/repositories.txt | while read l ; do
-   	
- 	
+
+	d=$( echo $l | cut -f5 -d\/ | cut -f1 -d\.  ) 
+	echo "Processing $d"  
+	dir_to_create=${start}/$d
+  	
 	if [[ -e  $dir_to_create ]] ; then 
 		echo "WARN: ${dir_to_create} aleady exists." 
 	else  	
