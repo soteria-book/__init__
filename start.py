@@ -18,7 +18,7 @@ parent, fn = os.path.split (  abs_path )
 print(parent) 
 print(fn) 
 
-repos = urllib.urlopen('https://raw.githubusercontent.com/soteria-book/publication/master/repositories.txt?q=' + dt()  )
+repos = urllib.urlopen('https://raw.githubusercontent.com/soteria-book/publication/master/repositories.txt?q=%s' % dt()  )
 lines = [ l.strip() for l in   repos.readlines() ]
 
 for l in lines : 
