@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 import os,sys,time,re , urllib 
 
+
+def dt ():
+	from datetime import datetime
+	from dateutil.tz import tzutc
+	dt_2020 = datetime(2020, 9, 13, 12, 26, 40, tzinfo=tzutc())
+	dt_1970 = datetime(1970, 1, 1, 0, 0, 0, tzinfo=tzutc())
+	return int((dt_2020 - dt_1970).total_seconds())
+
 curr_dir = sys.argv[0]
 print( curr_dir) 
 abs_path =  os.path.abspath(curr_dir)
@@ -10,7 +18,7 @@ parent, fn = os.path.split (  abs_path )
 print(parent) 
 print(fn) 
 
-repos = urllib.urlopen('https://raw.githubusercontent.com/soteria-book/publication/master/repositories.txt' )
+repos = urllib.urlopen('https://raw.githubusercontent.com/soteria-book/publication/master/repositories.txt?q=' + dt()  )
 lines = [ l.strip() for l in   repos.readlines() ]
 
 for l in lines : 
