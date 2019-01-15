@@ -9,14 +9,9 @@ def dt ():
 	dt_1970 = datetime(1970, 1, 1, 0, 0, 0, tzinfo=tzutc())
 	return int((dt_2020 - dt_1970).total_seconds())
 
-curr_dir = sys.argv[0]
-print( curr_dir) 
-abs_path =  os.path.abspath(curr_dir)
-print (abs_path) 
-parent, fn = os.path.split (  abs_path )  
+parent  = sys.argv[0]
 
-print(parent) 
-print(fn) 
+
 
 repos = urllib.urlopen('https://raw.githubusercontent.com/soteria-book/publication/master/repositories.txt?q=%s' % dt()  )
 lines = [ l.strip() for l in   repos.readlines() ]
