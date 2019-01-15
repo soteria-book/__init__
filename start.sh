@@ -20,6 +20,6 @@ done
 
 cd ${start}
 
-git clone git@github.com:joshlong/soteria-book.git ${start}/book 
+git clone git@github.com:soteria-book/soteria-book.git ${start}/book 
 subl ${start} 
 
