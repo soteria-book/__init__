@@ -1,6 +1,8 @@
 #!/usr/bin/env bash 
 
 start=$( cd `dirname $0` && pwd	 )
+echo $start 
+
 
 http https://raw.githubusercontent.com/soteria-book/publication/master/repositories.txt | while read l ; do
 
