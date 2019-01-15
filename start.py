@@ -2,8 +2,13 @@
 import os,sys,time,re , urllib 
 
 curr_dir = sys.argv[0]
+print( curr_dir) 
 abs_path =  os.path.abspath(curr_dir)
+print (abs_path) 
 parent, fn = os.path.split (  abs_path )  
+
+print(parent) 
+print(fn) 
 
 repos = urllib.urlopen('https://raw.githubusercontent.com/soteria-book/publication/master/repositories.txt' )
 lines = [ l.strip() for l in   repos.readlines() ]
